@@ -1,0 +1,36 @@
+ALGORITHM dotproduct
+VAR
+    scalaire:FUNCTION;
+    n,i:INTEGER;
+    t1: array of float[];
+    vectorpairs: array of integer[];
+BEGIN
+    FOR i FROM 0 TO vectorpairs.length STEP 1 DO
+        v1, v2 := vectorpairs[i];
+        IF (v1.length=v2.length) THEN
+            ps:=scalaire(v1,v2);
+            for i from 0 to n-1 step 2 do
+            IF (scalaire(v[i],v[i+1])=0) THEN
+                write (v[i], "and",v[i+1] ,"are orthogonal");
+            ELSE
+                write (v[i], "and",v[i+1] ,"are not orthogonal");
+            END_IF
+        end_for
+        ELSE
+            write ("Vectors must have the same length to calculate dot product");
+        END_IF
+    END_FOR
+END
+
+FUNCTION scalaire(v1:t1;v2:t1) : FLOAT
+VAR
+    i: INTEGER;
+    ps:FLOAT
+BEGIN
+    ps:=0;
+    FOR i FROM 0 TO v1.length STEP 1  DO
+        ps:=ps+v1[i]*v2[i];
+    END_FOR
+    RETURN ps ;
+END
+

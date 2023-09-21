@@ -1,0 +1,39 @@
+ALGORITHM algorithm_name
+VAR
+    chaine:PROCEDURE;
+    nbr:FUNCTION;
+    t1,t2: array of integer [];
+    ch1,ch2: string[];
+BEGIN
+    chaine(t1,t2,ch1,ch2)
+    write (nbr(t1,t2,ch1,ch2))
+END
+/*put each arrays elements into a string*/
+PROCEDURE chaine(t1,t2:tab; ch1,ch2:string)
+VAR
+    i: integer;
+BEGIN
+    FOR i FROM 0 TO t1.length-1 STEP 1  DO
+        ch1:=ch1+t1[i];
+    FOR i FROM 0 TO t2.length-1 STEP 1  DO
+        ch2:=ch2+t2[i];
+        END_IF
+    END_FOR
+END
+/*if number not present in string add it to the sum*/
+FUNCTION nbr(t1,t2:tab; ch1,ch2:string) : integer
+VAR
+    i,sum: integer;
+BEGIN
+    FOR i FROM 0 TO t1.length-1 STEP 1  DO
+        IF (t1[i].str not in ch1) THEN
+            sum=sum+t1[i];
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO t2.length-1 STEP 1  DO
+        IF (t2[i].str not in ch2) THEN
+            sum=sum+t2[i];
+        END_IF
+    END_FOR
+    RETURN sum ;
+END
