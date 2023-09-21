@@ -16,12 +16,13 @@ BEGIN
                 write (v[i], "and",v[i+1] ,"are not orthogonal");
             END_IF
         end_for
+        /*because there is no dot value for two vectors of different lengths*/
         ELSE
             write ("Vectors must have the same length to calculate dot product");
         END_IF
     END_FOR
 END
-
+/*calculates the dot value*/
 FUNCTION scalaire(v1:t1;v2:t1) : FLOAT
 VAR
     i: INTEGER;
